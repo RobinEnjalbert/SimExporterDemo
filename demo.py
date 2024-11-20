@@ -103,8 +103,8 @@ if __name__ == '__main__':
     subprocess.run(['git', 'push'])
 
     # Generate url
-    hash = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('utf-8')[:-1]
-    url = f'https://htmlpreview.github.io/?https://github.com/RobinEnjalbert/SimExporterDemo/blob/{hash}/html/logo.html'
+    com = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('utf-8')[:-1]
+    url = f'https://htmlpreview.github.io/?https://github.com/RobinEnjalbert/SimExporterDemo/blob/{com}/html/logo.html'
     webbrowser.open(url)
 
     # Generate qr-code
