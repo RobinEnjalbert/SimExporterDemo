@@ -90,6 +90,6 @@ if __name__ == '__main__':
     Sofa.Gui.GUIManager.closeGUI()
 
     # Export to HTML file
-    exporter.set_camera(factor=0.8, yaw=0, pitch=0)
+    # exporter.set_camera(factor=0.8, yaw=0, pitch=0)
     exporter.to_html(filename=join('html', 'logo.html'), background_color='black', grid_visible=False,
                      menu_visible=True, frame_visible=True)
