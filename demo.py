@@ -3,6 +3,7 @@ import subprocess
 import webbrowser
 from numpy import load
 from numpy.linalg import norm
+import qrcode
 
 import Sofa
 import Sofa.Gui
@@ -105,3 +106,7 @@ if __name__ == '__main__':
     hash = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('utf-8')[:-1]
     url = f'https://htmlpreview.github.io/?https://github.com/RobinEnjalbert/SimExporterDemo/blob/{hash}/html/logo.html'
     webbrowser.open(url)
+
+    # Generate qr-code
+    img = qrcode.make(url)
+    img.show()
