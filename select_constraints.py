@@ -160,12 +160,10 @@ class MeshSelector(Plotter):
 
 if __name__ == '__main__':
 
-    for file in ['constraints', 'forces']:
+    if not exists(f := join('data', 'constraints.npy')):
+        save(f, array([]))
 
-        if not exists(f := join('data', f'{file}.npy')):
-            save(f, array([]))
-
-        plt = MeshSelector(mesh_file=join('data', 'volume.vtk'),
-                           selection_file=f)
-        plt.launch(title=file.upper())
-        plt.save(overwrite=True)
+    plt = MeshSelector(mesh_file=join('data', 'volume.vtk'),
+                       selection_file=f)
+    plt.launch(title='CONSTRAINTS')
+    plt.save(overwrite=True)
